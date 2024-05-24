@@ -4,18 +4,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-/*
-function console.log() {
-  let Nome = document.getElementById("Nome").value;
-  let Email = document.getElementById("Email").value;
-  let Telefone = document.getElementById("Telefone").value;
-  let Descrição = document.getElementById("Descrição").value;
-
-  if(Email == "#" && Nome == "#" && Telefone == "#" && Descrição == "#") {
-    alert('Mensagem enviada, em breve entraremos em contato para mais informações!!')
-  }   
-}*/
-
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('popper.js')) :
     typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
