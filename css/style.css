@@ -5,6 +5,18 @@ body {
   background-color: #ffffff;
 }
 
+.hero-bg-img {
+  filter:blur(8px) brightness(0.3);
+
+}
+
+#liveAlertPlaceholder {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .layout_padding {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -659,13 +671,16 @@ a:focus {
   height: 120px;
 }
 
-
+.contact_section .contact_form-container > div {
+  display: flex;
+  flex-direction: column;
+}
 
 .contact_section .contact_form-container button {
   display: inline-block;
   padding: 10px 60px;
-  position: absolute;
-  right: 43.8%;
+  width: fit-content;
+  margin: 0 auto;
   background-color: #499bf3;
   color: #ffffff;
   -webkit-transition: all 0.3s;
@@ -889,6 +904,20 @@ a:focus {
 
 .footer_section a {
   color: rgba(254, 254, 255, 0.7);
+}
+
+.client {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.client img {
+  width: 120px !important;
+  border-radius: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 /* end footer section*/

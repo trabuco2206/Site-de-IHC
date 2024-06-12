@@ -8,7 +8,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon-16x16.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
   <title>StarPhone</title>
 
@@ -24,7 +24,7 @@
   <div class="hero_area">
     <div class="hero_bg_box">
       <div class="img-box">
-        <img src="images/produtos.png" alt="">
+        <img src="images/produtos.png" alt="" class="hero-bg-img">
       </div>
     </div>
 
@@ -34,9 +34,7 @@
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
             <a class="navbar-brand" href="index.html">
-              <span>
-                StarPhone
-              </span>
+             <img src="./images/logomarca.svg" alt="StarPhone" class="logomarca">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""></span>
@@ -96,7 +94,7 @@
         <div class="col-md-6 px-0">
           <div class="img_container">
             <div class="img-box">
-              <img src="images/about-img.jpg" alt="" />
+              <img src="images/logo.png" alt="" />
             </div>
           </div>
         </div>
@@ -133,8 +131,8 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="box">
-              <div class="img-box">
-                <img src="images/client.png" alt="">
+              <div class="img-box client">
+                <img src="images/gildao.jpeg" alt="">
               </div>
               <div class="detail-box">
                 <h4>
@@ -149,8 +147,8 @@
           </div>
           <div class="carousel-item ">
             <div class="box">
-              <div class="img-box">
-                <img src="images/client.png" alt="">
+              <div class="img-box client">
+                <img src="images/vaidapau.jpeg" alt="">
               </div>
               <div class="detail-box">
                 <h4>
@@ -198,23 +196,23 @@
       <div class="">
         <div class="row">
           <div class="col-md-7 mx-auto">
-            <form action="#">
+            <form id="liveAlertBtn">
               <div class="contact_form-container">
                 <div>
                   <div>
-                    <input type="text" placeholder="Nome " />
+                    <input type="text" required placeholder="Nome " />
                   </div>
                   <div>
-                    <input type="text" placeholder="Email " />
+                    <input type="email" required placeholder="Email " />
                   </div>
                   <div>
-                    <input type="text" placeholder="Telefone " />
+                    <input type="text" required placeholder="Telefone " />
                   </div>
                   <div class="">
-                    <input type="text" placeholder="Descrição" class="message_input" />
+                    <input type="text" required placeholder="Descrição" class="message_input" />
                   </div>
                   <div id="liveAlertPlaceholder"></div>
-                  <button type="button" class="btn btn-primary" id="liveAlertBtn">Enviar</button>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
               </div>
             </form>
@@ -369,8 +367,12 @@
     
     const alertTrigger = document.getElementById('liveAlertBtn')
     if (alertTrigger) {
-      alertTrigger.addEventListener('click', () => {
+      alertTrigger.addEventListener('submit', (ev) => {
+        ev.preventDefault();
         appendAlert('Mensagem enviada, em breve entraremos em contato', 'success')
+        setTimeout(() => {
+          alertPlaceholder.innerHTML = []
+        }, 2000)
       })
     }
   </script>
